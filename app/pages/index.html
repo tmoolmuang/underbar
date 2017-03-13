@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Underbar Test Suite</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+		<link rel="stylesheet" href="/styles/mocha.css" />  
+  </head>
+  <body>
+    <div id="mocha"></div>		
+		
+		<script src="/scripts/lib/chai.js"></script>
+    <script src="/scripts/lib/mocha.js"></script>
+    <script src="/scripts/lib/sinon.js"></script>
+    <script src="/scripts/lib/sinon-chai.js"></script>
+    <script src="/scripts/lib/cardboard.js"></script>
+    <script src="/scripts/lib/testSupport.js"></script>
+    <!-- Source files -->
+		<script src="/scripts/underbar.js"></script>
+    <!-- End source files -->
+
+    <!-- Test files -->
+    <script>
+			var clock;
+
+			before(function() {
+				clock = sinon.useFakeTimers();
+			});
+
+			after(function() {
+				clock.restore();
+			});
+    </script>
+    <script src="/scripts/spec/part1.js"></script>
+    <script src="/scripts/spec/part2.js"></script>
+    <script src="/scripts/spec/extraCredit.js"></script>
+    <!-- End test files -->
+  </body>
+</html>
